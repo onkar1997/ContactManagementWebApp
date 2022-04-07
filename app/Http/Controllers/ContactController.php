@@ -20,7 +20,7 @@ class ContactController extends Controller
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|min:10|numeric',
             'image' => 'image|nullable|max:1999'
         ]);
 
@@ -65,7 +65,7 @@ class ContactController extends Controller
     public function update(Request $request, $id) {
         $this->validate($request, [
             'name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|min:10|numeric',
             'image' => 'image|nullable|max:1999'
         ]);
 
